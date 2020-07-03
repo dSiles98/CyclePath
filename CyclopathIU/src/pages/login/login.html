@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title> LOGIN</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding background="dark">
+  <form [formGroup]="validator">
+    <ion-item>
+      <ion-label floating><ion-icon name="username"></ion-icon>&nbsp; User name</ion-label>
+      <ion-input type="email" color="light" formControlName="username"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating><ion-icon name="key"></ion-icon>&nbsp;Password</ion-label>
+      <ion-input type="password" formControlName="password"> </ion-input>
+    </ion-item>
+    <br>
+    <div text-center>
+        <button (click)="login()" class="submit" ion-button color="secondary" round>LOGIN</button>
+    </div>
+  </form><br>
+  <a (click)="goToRecoverPassword()">Did you forget your password?</a>
+</ion-content>

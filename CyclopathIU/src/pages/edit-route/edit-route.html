@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </button>
+    <ion-title>{{ 'EDITROUTE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="validator">
+    <ion-item class="input">
+      <ion-label floating><ion-icon name="pricetag"></ion-icon>&nbsp; {{ 'CATEGORY' | translate }}</ion-label>
+      <ion-input #category [(ngModel)]="categoryValue" type="text" formControlName="category"> </ion-input>
+    </ion-item>
+  </form>
+  <br>
+  <br>
+  &nbsp;
+  <button class="undo" (click)="undoLast()" ion-button color="secondary" round>
+    <ion-icon name="undo"></ion-icon>
+  </button>
+  <br>
+  <br>
+  <div #map id="map" (click)="addNewPoint()"></div>
+  <br>
+  <div text-center>
+    <button (click)="EditRoute(category.value)" [disabled]="!validator.valid" class="submit" ion-button color="secondary" round>{{ 'EDITROUTE' | translate }}</button>
+  </div>
+</ion-content>

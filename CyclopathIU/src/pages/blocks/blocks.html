@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'BLOCKS' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <div *ngFor="let account of accounts" >
+      <ion-item *ngIf="account.visible" class="block">
+        <ion-avatar item-start>
+          <img src="assets/imgs/logo.png">
+        </ion-avatar>
+        <h2 ion-text >{{account.username}}</h2>
+        <h3 ion-text >{{account.name}} {{account.lastname}}</h3>
+        <button ion-button clear item-end (click)="unBlock(account)" >{{ 'UNBLOCK' | translate }}</button>
+
+      </ion-item>
+      </div>
+  </ion-list>
+</ion-content>

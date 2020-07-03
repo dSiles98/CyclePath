@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>f86bcc00-e507-4e7e-a0ea-bcd5a88e3e7e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20181120185951_LanguajeTable.cs" />
+    <Compile Remove="Migrations\20181120185951_LanguajeTable.Designer.cs" />
+    <Compile Remove="Migrations\20181120190238_LanguajeTable.cs" />
+    <Compile Remove="Migrations\20181120190238_LanguajeTable.Designer.cs" />
+    <Compile Remove="Migrations\20181120190845_LanguajeTableFk.cs" />
+    <Compile Remove="Migrations\20181120190845_LanguajeTableFk.Designer.cs" />
+    <Compile Remove="Migrations\20181120191307_LanguajeTableFk.cs" />
+    <Compile Remove="Migrations\20181120191307_LanguajeTableFk.Designer.cs" />
+    <Compile Remove="Migrations\20181120213628_LanguageError.cs" />
+    <Compile Remove="Migrations\20181120213628_LanguageError.Designer.cs" />
+    <Compile Remove="Migrations\20181122192656_RoxieMigration.cs" />
+    <Compile Remove="Migrations\20181122192656_RoxieMigration.Designer.cs" />
+    <Compile Remove="Migrations\20181122213906_cyclePath.cs" />
+    <Compile Remove="Migrations\20181122213906_cyclePath.Designer.cs" />
+    <Compile Remove="Migrations\20181205031056_AzureRouteColumnsRequired.cs" />
+    <Compile Remove="Migrations\20181205031056_AzureRouteColumnsRequired.Designer.cs" />
+    <Compile Remove="Migrations\20181207215739_AzureRequiredFieldsInROute.cs" />
+    <Compile Remove="Migrations\20181207215739_AzureRequiredFieldsInROute.Designer.cs" />
+    <Compile Remove="Migrations\20181207220331_AzureRequiredFieldsInROute.cs" />
+    <Compile Remove="Migrations\20181207220331_AzureRequiredFieldsInROute.Designer.cs" />
+    <Compile Remove="Migrations\20181207221231_AzureRequiredFieldsInRoute.cs" />
+    <Compile Remove="Migrations\20181207221231_AzureRequiredFieldsInRoute.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.18571.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

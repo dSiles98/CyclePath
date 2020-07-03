@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> SING UP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding >
+
+
+  <form [formGroup]="validator">
+    <ion-item>
+      <ion-label  floating><ion-icon name="mail"></ion-icon>&nbsp; Email</ion-label>
+      <ion-input type="email" color="light" formControlName="email"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating><ion-icon name="person"></ion-icon>&nbsp; Name</ion-label>
+      <ion-input  formControlName="name"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating><ion-icon name="person"></ion-icon>&nbsp; Last Name</ion-label>
+      <ion-input formControlName="lastname"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating><ion-icon name="bicycle"></ion-icon>&nbsp; User Name</ion-label>
+      <ion-input formControlName="username"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked><ion-icon name="calendar"></ion-icon>&nbsp; Birthday</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" formControlName="birthday"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating><ion-icon name="key"></ion-icon>&nbsp; Password</ion-label>
+      <ion-input type="password" formControlName="password"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  floating><ion-icon name="key"></ion-icon>&nbsp; Confirm password</ion-label>
+      <ion-input type="password" formControlName="confirmPassword"> </ion-input>
+    </ion-item>
+    <br>
+    <div text-center>
+      <button class="submit" ion-button color="secondary" round (click)="clickSignUp()" [disabled]="!validator.valid">Create account</button>
+    </div>
+  </form>
+
+</ion-content>

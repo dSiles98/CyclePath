@@ -1,0 +1,48 @@
+page-home {
+  margin-top: 10%;
+
+  h1 {
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .slider {
+    height: 40%;
+  }
+
+  .swiper-pagination-bullet {
+    background: #ffffff;
+  }
+
+  button {
+    width: 85%;
+  }
+
+  div {
+    margin-bottom: 5%;
+  }
+
+  .social {
+    color: #2699fb;
+    border-color: #2699fb;
+    border-width: 2px;
+  }
+
+  .pict {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+  }
+
+  div.description {
+    position: absolute; /* absolute position (so we can position it where we want)*/
+    bottom: 0px; /* position will be on bottom */
+    left: 0px;
+    width: 100%;
+    /* styling bellow */
+    background-color: black;
+    color: white;
+    opacity: 0.6; /* transparency */
+    filter: alpha(opacity=60); /* IE transparency */
+  }
+}

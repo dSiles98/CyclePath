@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> <ion-icon name="bicycle"></ion-icon> {{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <h5 padding>{{ 'ADDRESS' | translate }}: {{direction}}</h5>
+  <h5 padding>{{ 'OWNER' | translate }}: {{owner.name}} {{owner.lastname}}</h5>
+  <ion-list>
+      <byke *ngFor="let bike of bikes" [bike]="bike"></byke>
+  </ion-list>
+</ion-content>
+

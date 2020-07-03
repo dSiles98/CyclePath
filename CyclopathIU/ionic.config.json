@@ -1,0 +1,7 @@
+{
+  "name": "CyclopathIU",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

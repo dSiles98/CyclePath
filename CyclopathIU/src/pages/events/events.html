@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{ 'COMMUNITYEVENTS' | translate }}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+      <!--div class="icons">
+          <span><ion-icon ios="ios-search" md="md-search" (click)="swipeSearchBar()"></ion-icon></span>
+          <span class="example-fill-remaining-space"></span>
+          <span><ion-icon name="list">&nbsp;&nbsp;</ion-icon><ion-icon name="globe" class="globe"></ion-icon></span>
+      </div-->
+    <ion-searchbar *ngIf="searchBarOn" class="search"></ion-searchbar>
+    <event-card *ngFor="let event of events" [event]="event"></event-card>
+  </ion-content>

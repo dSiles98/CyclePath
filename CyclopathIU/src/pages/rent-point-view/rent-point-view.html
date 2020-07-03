@@ -1,0 +1,14 @@
+<ion-header>
+  <navbar [title]="title" [isRoot]="true"></navbar>
+</ion-header>
+<ion-content>
+  <div class="icons">
+    <span><ion-icon ios="ios-search" md="md-search" (click)="swipeSearchBar()"></ion-icon></span>
+    <span class="example-fill-remaining-space"></span>
+    <span (click)="goToAddBike()"><ion-icon name="add"></ion-icon>&nbsp;{{ 'ADDNEWBIKE' | translate }}</span>
+  </div>
+  <ion-searchbar *ngIf="searchBarOn" class="search"></ion-searchbar>
+  <ion-list>
+      <byke *ngFor="let bike of bikes" [bike]="bike" [isMine]="true"></byke>
+  </ion-list>
+</ion-content>

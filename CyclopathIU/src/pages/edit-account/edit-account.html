@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'EDITACCOUNT' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <form [formGroup]="validator">
+    <ion-item>
+      <ion-label floating><ion-icon name="mail"></ion-icon>&nbsp; Email</ion-label>
+      <ion-input type="email" color="light" formControlName="email"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating><ion-icon name="person"></ion-icon>&nbsp; {{ 'NAME' | translate }}</ion-label>
+      <ion-input formControlName="name"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating><ion-icon name="person"></ion-icon>&nbsp; {{ 'LASTNAME' | translate }}</ion-label>
+      <ion-input formControlName="lastname"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked><ion-icon name="calendar"></ion-icon>&nbsp; {{ 'BIRTHDAY' | translate }}</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" formControlName="birthday"></ion-datetime>
+    </ion-item>
+    <br>
+    <div text-center>
+      <button class="submit" ion-button color="secondary" round (click)="clickEdit()" [disabled]="!validator.valid">{{ 'UPDATE' | translate }}</button>
+    </div>
+  </form>
+
+</ion-content>

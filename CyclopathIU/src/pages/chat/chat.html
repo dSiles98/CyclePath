@@ -1,0 +1,45 @@
+
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title *ngIf="account" (click)="GotoProfile()">{{account.username}} </ion-title>
+    <ion-buttons end *ngIf="!isBlocked">
+      <button ion-button color="danger" (click)="blockUser()">{{ 'BLOCK' | translate }}</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row *ngFor="let message of messages">
+
+      <ion-col col-9 *ngIf="message.ownerId === account.id" class="message" [ngClass]="{'my_message': message.ownerId !== account.id, 'other_message': message.ownerId === account.id}">
+        <span>{{ message.content }}</span>
+        <div class="time">{{message.sendTime | date:'dd.MM HH:mm'}}</div>
+      </ion-col>
+
+      <ion-col offset-3 col-9 *ngIf="message.ownerId !== account.id" class="message" [ngClass]="{'my_message': message.ownerId !== account.id, 'other_message': message.ownerId === account.id}">
+        <span>{{ message.content }}</span>
+        <div class="time">{{message.sendTime | date:'dd.MM HH:mm'}}</div>
+        <div class="time" *ngIf="message.delivered"><br />{{ 'DELIVERED' | translate }}</div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer color="secondary">
+  <ion-toolbar class="message_row">
+    <ion-row class="message_row">
+      <ion-col col-9>
+        <ion-item no-lines color="ligth">
+          <ion-input type="text" placeholder="Messages" [(ngModel)]="message"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button clear color="primary" (click)="sendMessage()" [disabled]="message === ''">{{ 'SEND' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

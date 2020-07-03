@@ -1,0 +1,56 @@
+.light-theme {
+  ion-content {
+    background-color: #ffffff;
+    color: black;
+  }
+
+  ion-item {
+    background: white;
+    color: black;
+  }
+
+  ion-card {
+    background-color: #2699fb;
+
+    p {
+      color: white;
+    }
+
+    .operation {
+      color: white;
+    }
+
+    button {
+      background-color: white;
+      color: #2699fb;
+    }
+
+    h2 {
+      color: #ffffff;
+    }
+  }
+
+  ion-card-title {
+    color: white;
+  }
+
+  ion-card-content {
+    color: white;
+  }
+
+  .friend-button {
+    color: #2699fb;
+  }
+
+  .conversation-button {
+    color: #2699fb;
+  }
+
+  ion-note {
+    color: #ffffff;
+  }
+
+  a {
+    color: #2699fb;
+  }
+}

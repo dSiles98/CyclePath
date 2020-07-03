@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'CONVERSATIONS' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let conversation of singleton.data">
+      <ion-icon color="primary" name="information-circle" *ngIf ="!conversation.noNews"></ion-icon>
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2 ion-text>{{conversation.accountUsername}}</h2>
+      <button ion-button clear item-end class="conversation-button" (click)="GotoChat(conversation.accountUsername)">
+        <ion-icon name="chatbubbles"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

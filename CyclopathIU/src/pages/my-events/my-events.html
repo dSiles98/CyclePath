@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+          {{ 'MYEVENTS' | translate }}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="icons">
+        <span><ion-icon ios="ios-search" md="md-search" (click)="swipeSearchBar()"></ion-icon></span>
+        <span class="example-fill-remaining-space"></span>
+        <span (click)="goToCreateEvent()"><ion-icon name="add"></ion-icon>&nbsp;{{ 'ADDNEWEVENT' | translate }}</span>
+      </div>
+      <ion-searchbar *ngIf="searchBarOn" class="search"></ion-searchbar>
+      <event-card *ngFor="let event of events" [event]="event" [isMine]="true"></event-card>
+</ion-content>

@@ -1,0 +1,10 @@
+<ion-header>
+  <navbar [title]="[ 'MYRENTPOINTS' | translate]" [isRoot]="true"></navbar>
+</ion-header>
+<ion-content>
+  <div class="icons">
+    <span class="example-fill-remaining-space"></span>
+    <span (click)="goToCreateRoute()"><ion-icon name="add"></ion-icon>&nbsp;{{ 'ADDRENTPOINT' | translate }}</span>
+  </div>
+  <google-maps></google-maps>
+</ion-content>

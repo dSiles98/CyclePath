@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'MYFRIENDS' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="icons">
+    <span></span>
+    <span class="example-fill-remaining-space"></span>
+    <span (click)="changeSearch()"><ion-icon name="add"></ion-icon>&nbsp;{{ 'ADDNEWFRIEND' | translate }}</span>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let account of accounts">
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2 ion-text>{{account.idFriend}}</h2>
+      <button class="friend-button" ion-button clear item-end (click)="GotoChat(account.idFriend)"><ion-icon name="chatbubbles"></ion-icon></button>
+      <button class="friend-button" ion-button clear item-end (click)="GotoProfile(account.idFriend)">View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

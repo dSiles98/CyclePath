@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'MYENLISTMENTS' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <event-card *ngFor="let event of enlistments" [event]="event"></event-card>
+</ion-content>

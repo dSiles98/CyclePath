@@ -1,0 +1,25 @@
+<ion-card class="card" *ngIf="visible">
+  <span class="icons" *ngIf="isMine">
+    <ion-icon class="operation" ios="ios-create" md="md-create" (click)="editRoute()"></ion-icon>&nbsp;&nbsp;
+    <ion-icon class="operation" ios="ios-trash" md="md-trash" (click)="deleteRouteConfirm()"></ion-icon>
+  </span>
+
+  <ion-card-content class="content">
+    <h2>{{route.owner}}</h2>
+    <p>{{getCategory()}}</p>
+    <ion-avatar item-start (click)="goToRouteView()">
+      <img class="img" src="assets/imgs/map.png">
+    </ion-avatar>
+    <p>Address: {{route.address}}</p>
+    <p>City: {{route.city}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-note>
+        {{route.date}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

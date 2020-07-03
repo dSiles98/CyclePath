@@ -1,0 +1,16 @@
+page-event {
+  .example-fill-remaining-space {
+    flex: 1 1 auto;
+  }
+
+  .icons {
+    margin: 5%;
+    display: flex;
+  }
+
+  #map {
+    display: block;
+    height: 400px;
+    width: 100%;
+  }
+}

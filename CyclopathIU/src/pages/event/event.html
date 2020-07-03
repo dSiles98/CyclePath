@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title> <ion-icon name="calendar"></ion-icon> {{name}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content>
+  <h5 padding>{{ 'CREATOR' | translate }}: {{owner.name}} {{owner.lastname}}</h5>
+  <h5 padding>{{ 'EVENTDATE' | translate }}: {{eventDate}}</h5>
+  <h5 padding>{{ 'ROUTENAME' | translate }}: {{routeName}} </h5>
+  <h5 padding>{{ 'PARTICIPANTS' | translate }}:</h5>
+  <div class="icons">
+    <span class="example-fill-remaining-space"></span>
+    <span *ngIf="!isEnlisted()"> <ion-icon name="add" (click)="enlist()"></ion-icon> {{ 'JOIN' | translate }} </span><span *ngIf="isEnlisted()"><ion-icon name="remove" (click)="unlist()"></ion-icon> {{ 'QUIT' | translate }} </span>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let account of participants">
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2 ion-text>{{account.username}}</h2>
+      <h3 ion-text>{{account.name}} {{account.lastname}}</h3>
+      <button ion-button clear item-end (click)="GotoProfile(account)">{{ 'VIEW' | translate }}</button>
+    </ion-item>
+  </ion-list>
+  <h5 padding>{{ 'ADDRESS' | translate }}: {{address}}</h5>
+  <h5 padding>{{ 'ROUTE' | translate }}:</h5>
+  <google-maps></google-maps> <br />
+</ion-content>

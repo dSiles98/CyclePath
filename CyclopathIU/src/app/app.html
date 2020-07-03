@@ -1,0 +1,67 @@
+<ion-menu [content]="content" (ionOpen)="menuOpened()">
+    <ion-content style="background-color:#2699fb" *ngIf="logged()">
+        <ion-list>
+            <button ion-item (click)="openOptions('rentpoints')" color="secondary">
+          <ion-icon name="pin"></ion-icon>&nbsp;{{'RENTPOINTS' | translate}}
+        </button>
+            <ion-list *ngIf="visibleOption == 'rentpoints'">
+                <button ion-item *ngFor="let page of rentpoints" (click)="openPage(page)" color="secondary">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <ion-icon color="primary" name="information-circle" *ngIf="page.alert"></ion-icon>
+            <ion-icon name="{{page.icon}}"></ion-icon>&nbsp;{{page.title | translate}}
+          </button>
+            </ion-list>
+            <button ion-item (click)="openOptions('routes')" color="secondary">
+          <ion-icon name="git-branch"></ion-icon>&nbsp;{{'ROUTES' | translate}}
+        </button>
+            <ion-list *ngIf="visibleOption == 'routes'">
+                <button ion-item *ngFor="let page of routes" (click)="openPage(page)" color="secondary">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <ion-icon color="primary" name="information-circle" *ngIf="page.alert"></ion-icon>
+            <ion-icon name="{{page.icon}}"></ion-icon>&nbsp;{{page.title | translate}}
+          </button>
+            </ion-list>
+            <button ion-item (click)="openOptions('community')" color="secondary">
+          <ion-icon name="people"></ion-icon>&nbsp;{{'COMMUNITY' | translate}}
+        </button>
+            <ion-list *ngIf="visibleOption == 'community'">
+                <button ion-item *ngFor="let page of community" (click)="openPage(page)" color="secondary">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <ion-icon color="primary" name="information-circle" *ngIf="page.alert"></ion-icon>
+            <ion-icon name="{{page.icon}}"></ion-icon>&nbsp;{{page.title | translate}}
+          </button>
+            </ion-list>
+            <button ion-item (click)="openOptions('settings')" color="secondary">
+          <ion-icon name="settings"></ion-icon>&nbsp;{{'SETTINGS' | translate}}
+        </button>
+            <ion-list *ngIf="visibleOption == 'settings'">
+                <button ion-item *ngFor="let page of settings" (click)="openPage(page)" color="secondary">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <ion-icon color="primary" name="information-circle" *ngIf="page.alert"></ion-icon>
+            <ion-icon name="{{page.icon}}"></ion-icon>&nbsp;{{page.title | translate}}
+          </button>
+                <button ion-item (click)="closePage()" color="secondary">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    <ion-icon name="log-out"></ion-icon>&nbsp;{{'LOGOUT' | translate}}
+                </button>
+            </ion-list>
+        </ion-list>
+    </ion-content>
+    <ion-header *ngIf="logged()">
+        <ion-toolbar color="secondarylight" text-center class="heighthalf">
+            <img class="circle-pic" src="assets/imgs/logo.png">
+            <br />
+            <h2 ion-text color="light">{{username}}</h2>
+            <h6 ion-text color="light">{{name}} {{lastname}}</h6>
+            <ion-grid>
+                <ion-row>
+                    <ion-col *ngFor="let p of userRating" ion-text color="light">
+                        {{p.count}}<br /> {{p.title | translate }}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-toolbar>
+    </ion-header>
+</ion-menu>
+
+<ion-nav [root]="rootPage" [class]="selectedTheme" #content swipeBackEnabled="false"></ion-nav>

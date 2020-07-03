@@ -1,0 +1,26 @@
+<ion-header>
+  <navbar title="{{ title | translate }}" [isRoot]="true"></navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="validator" (ngSubmit)="addNewBike()">
+    <ion-item>
+      <ion-label floating>{{ 'DESCRIPTION' | translate }}</ion-label>
+      <ion-input type="text" icon="information-circle" formControlName="description"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label floating>{{'PRICE' | translate }}</ion-label>
+      <ion-input type="number" icon="logo-usd" formControlName="price"></ion-input>
+    </ion-item>
+    <div text-center>
+      <img [src]="image" *ngIf="image" />
+      <button (click)="getPicture()" type="button" class="submit" ion-button color="secondary" round>{{ 'TAKEPHOTO' | translate }}</button>
+    </div>
+    <br>
+    <br>
+    <div text-center>
+      <button class="submit" type="submit" ion-button color="secondary" [disabled]="!validator.valid || !imageToSave" round>{{ title | translate}}</button>
+    </div>
+  </form>
+</ion-content>

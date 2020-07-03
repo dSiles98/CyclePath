@@ -1,0 +1,28 @@
+
+<ion-header >
+  <ion-navbar color="secondary">
+    <ion-title>{{ 'PROFILE' | translate }}: {{account.username}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center class="profile">
+  <img class="circle-pic" src="assets/imgs/logo.png">
+  <br />
+  <h2 ion-text >{{account.username}}</h2>
+  <h6 ion-text >{{account.name}} {{account.lastname}}</h6>
+  <h6 ion-text >{{account.birthday}}</h6>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let p of userRating" ion-text>
+        {{p.count}}<br />
+        {{p.title | translate }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <button class="submit" ion-button color="secondary" round (click)="addFriend()" *ngIf="!isFriend()">
+    <ion-icon name="add"></ion-icon>&nbsp;{{ 'ADDFRIEND' | translate }}
+  </button>
+  <button ion-button color="secondary" round (click)="deleteFriend()" *ngIf="isFriend()">
+    <ion-icon name="add"></ion-icon>&nbsp;{{ 'DELETEFRIEND' | translate }}
+  </button>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'CREATERENTPOINT' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="validator">
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="cube"></ion-icon>{{ 'TITLE' | translate }}
+      </ion-label>
+      <ion-input formControlName="title"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating><ion-icon name="navigate"></ion-icon>&nbsp;{{ 'ADDRESS' | translate }}</ion-label>
+      <ion-input formControlName="direction"> </ion-input>
+    </ion-item>
+    <br/><br/>
+    <google-maps></google-maps>
+    <br/>
+    <div text-center>
+      <button (click)="submitBikes()" class="submit" ion-button color="secondary" round [disabled]="!validator.valid">{{ 'SUBMIT' | translate }}</button>
+    </div>
+  </form>
+</ion-content>

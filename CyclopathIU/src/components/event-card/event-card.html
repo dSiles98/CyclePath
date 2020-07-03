@@ -1,0 +1,14 @@
+<ion-card class="card" *ngIf="visible">
+    <span class="icons" *ngIf="isMine">
+        <ion-icon class="operation" ios="ios-create" md="md-create" (click)="modifiEvent()"></ion-icon>&nbsp;&nbsp;
+        <ion-icon class="operation" ios="ios-trash" md="md-trash" (click)="deleteEvent() "></ion-icon>
+    </span>
+  <ion-card-content class="content">
+    <ion-card-title class="title" (click)="goToEventView()">
+      {{event.name}}
+      </ion-card-title>
+    <p>
+      {{event.eventDate}}
+    </p>
+  </ion-card-content>
+</ion-card>

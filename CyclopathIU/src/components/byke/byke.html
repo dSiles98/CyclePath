@@ -1,0 +1,16 @@
+<ion-card class="card" *ngIf="visible">
+  <ion-card-content class="content" text-left *ngIf="bike.disponible || isMine">
+    <p>{{bike.price}}$/hr</p>
+    <p>{{bike.description}}</p>
+    <p *ngIf="isMine">{{ getReservationStatus() | translate }}</p>
+    <ion-avatar item-start>
+       <img [attr.src]="showImage()"/>
+    </ion-avatar>
+    <div class="buttons" text-center>
+      <button *ngIf="!isMine" ion-button  (click)="reserve()">{{ 'RESERVE' | translate }}</button>
+      <button *ngIf="isMine" ion-button  (click)="changeReservationStatus()">{{ 'CHANGESTATUS' | translate }}</button>
+      <button *ngIf="isMine" ion-button  (click)="goToEditBike()">{{ 'EDIT' | translate }}</button>
+      <button *ngIf="isMine" ion-button color="secondary" (click)="delete()">{{ 'DELETE' | translate }}</button>
+    </div>
+  </ion-card-content>
+</ion-card>

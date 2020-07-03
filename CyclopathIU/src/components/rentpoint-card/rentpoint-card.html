@@ -1,0 +1,19 @@
+<ion-card class="card" *ngIf="visible">
+    <span class="icons" *ngIf="isMine">
+        <ion-icon class="operation" ios="ios-create" md="md-create" (click)="modifiRentPoint()"></ion-icon>&nbsp;&nbsp;
+        <ion-icon class="operation" ios="ios-trash" md="md-trash" (click)="deleteRentPointConfirm() "></ion-icon>
+    </span>
+  <ion-card-content class="content">
+    <ion-card-title class="title" (click)="goToRentPointView()">
+      {{rentPoint.title}}
+      </ion-card-title>
+    <p>
+      {{rentPoint.direction}}
+    </p>
+    <span [ngStyle]="colorRating(1)" class="fa fa-star"></span>
+    <span [ngStyle]="colorRating(2)" class="fa fa-star"></span>
+    <span [ngStyle]="colorRating(3)" class="fa fa-star"></span>
+    <span [ngStyle]="colorRating(4)" class="fa fa-star"></span>
+    <span [ngStyle]="colorRating(5)" class="fa fa-star"></span>
+  </ion-card-content>
+</ion-card>

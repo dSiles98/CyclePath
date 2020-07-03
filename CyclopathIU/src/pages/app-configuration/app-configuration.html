@@ -1,0 +1,27 @@
+<ion-header>
+
+  <navbar title="{{'APPSETTINGS' | translate}}" [isRoot]="true"></navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>{{'THEME' |  translate}}</ion-label>
+        <ion-select [(ngModel)]="theme" (ngModelChange)="toggleAppTheme()">
+          <ion-option value="dark-theme">{{'DARK' |  translate}}</ion-option>
+          <ion-option value="light-theme">{{'LIGHT' |  translate}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <ion-item>
+          <ion-label>{{'LANGUAGE' |  translate}}</ion-label>
+          <ion-select [(ngModel)]="lenguage" (ngModelChange)="changeAppLanguage()">
+            <ion-option value="english">{{'ENGLISH' |  translate}}</ion-option>
+            <ion-option value="spanish">{{'SPANISH' | translate}}</ion-option>
+          </ion-select>
+        </ion-item>
+  <footer text-center>
+    <button class="submit" ion-button color="danger" round (click)="presentPrompt()" >{{"DELETEACCOUNT" | translate}}</button>
+  </footer>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{ 'EDITRENTPOINT' | translate }}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="validator">
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="cube"></ion-icon>&nbsp;{{ 'TITLE' | translate }}</ion-label>
+            <ion-input [(ngModel)]="title" formControlName="title"> </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="navigate"></ion-icon>&nbsp;{{ 'ADDRESS' | translate }}
+          </ion-label>
+            <ion-input [(ngModel)]="direction" formControlName="direction"> </ion-input>
+        </ion-item>
+        <br />
+      <google-maps></google-maps>
+
+        <div text-center>
+          <button (click)="editRentpoint()" class="submit" ion-button color="secondary" round>{{ 'EDITRENTPOINT' | translate }}</button>
+        </div>
+    </form>
+
+</ion-content>

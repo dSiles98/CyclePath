@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'USERS' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchTerm"   (ionInput)="setFilteredItems()"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let account of accounts" [ngStyle]="isNotMe(account)">
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2 ion-text>{{account.username}}</h2>
+      <h3 ion-text>{{account.name}} {{account.lastname}}</h3>
+      <button ion-button clear item-end (click)="GotoProfile(account)">{{ 'VIEW' | translate }}</button>
+      <button ion-button clear item-end (click)="addFriend(account.username)"><ion-icon name="add"></ion-icon></button>
+    </ion-item>
+  </ion-list>
+</ion-content>
